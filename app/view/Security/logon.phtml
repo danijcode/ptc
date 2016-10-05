@@ -1,0 +1,29 @@
+<div class="container">       
+    <form method="POST" action="index.php?Security/logar" id="fLogon" name="fLogon" class="form-signin">
+        <?php if (isset($view_feedback)): ?>
+            <?php if ($view_feedback): ?>
+                <br>
+                <div class="bs-docs-example">
+                    <div class="alert alert-error">
+                        <button class="close" data-dismiss="alert" type="button">×</button>
+                        <strong>Erro!</strong> Verifique seu login e senha.
+                    </div>
+                </div>
+            <?php else: ?>
+                <br>
+                <div class="bs-docs-example">
+                    <div class="alert alert-success">
+                        <button class="close" data-dismiss="alert" type="button">×</button>
+                        <strong>Parabéns!</strong> 
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+        <img src="<?php echo PATH_TEMPLATE_URL; ?>/images/logo.png" class="img-rounded">
+        <input type="text" name="email" id="email" class="input-block-level" placeholder="Email">
+        <input type="password" name="senha" id="senha" class="input-block-level" placeholder="Senha">
+        <p class="text-right"><a href="#">Relembre-me!</a></p>
+        <p class="text-center"><button class="btn btn-primary" type="submit">Entre</button></p>
+    </form>
+</div> 
+

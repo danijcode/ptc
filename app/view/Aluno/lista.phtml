@@ -1,0 +1,51 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Aluno<small>lista</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+
+    <div class="page-region">
+        <div class="page-region-content">
+            <!-- inicio table com lista de usuarios -->
+            <div>
+                  <?php echo $view_toolbar; ?>            
+            </div>
+            <?php if($view_listAluno != null){ ?>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Academia</th>                                        
+                        <th>Matricula</th>                                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($view_listAluno as $objAluno) : ?>
+                    <tr>
+                        <td>
+                            <a href="index.php?Aluno/informar/id/<?php echo $objAluno->getId(); ?>">
+                                <?php echo ($objAluno->getNome()); ?>
+                            </a>
+                        </td>
+
+                        <td>
+                            <?php echo $objAluno->getAcademia(); ?>
+                        </td>
+
+                        <td>
+                            <?php echo $objAluno->getMatricula(); ?>
+                        </td>
+
+                    </tr>
+                    <?php endforeach ?>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <?php }else{?>
+            <h3>Nenhum aluno encontrado.</h3>
+            <?php } ?>
+        </div>
+    </div>
+</div>

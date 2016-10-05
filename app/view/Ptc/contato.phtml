@@ -1,0 +1,40 @@
+<br></br>
+<?php if(isset($view_feedback)): ?>
+    <?php if($view_feedback): ?>
+        <br>
+        <div class="bs-docs-example">
+            <div class="alert alert-error">
+                <button class="close" data-dismiss="alert" type="button">×</button>
+                <strong>Erro!</strong> Sua opinião, crítica, sugestão ou elogio não foi enviado corretamente.
+            </div>
+        </div>
+    <?php else: ?>
+        <br>
+        <div class="bs-docs-example">
+            <div class="alert alert-success">
+                <button class="close" data-dismiss="alert" type="button">×</button>
+                <strong>Parabéns!</strong> Sua opinião, crítica, sugestão ou elogio foi enviado corretamente.
+            </div>
+        </div>
+     <?php endif; ?>
+<?php endif; ?>
+
+<form action="<?php echo PATH_URL; ?>index.php?Ptc/enviarContato" name="fContato" id="fContato" method="POST" >
+    <fieldset>
+        <legend>Fale Conosco:</legend>
+        <p> Este espaço foi criado especialmente para você entrar e contato conosco. Para dar a sua opinião, fazer uma crítica, sugestão ou elogio basta preencher corretamente os campos abaixo.</p>
+        <label>Nome* :</label>
+        <input class="input-block-level" type="text" name="nome" id="nome" required="">
+        <label>Email* :</label>
+        <input class="input-block-level" type="text" name="email" id="email" required="">
+        <label>Telefone* :</label>
+        <input class="control-label" type="text" name="telefone" id="telefone" required="">
+        <label>Cidade* :</label>
+        <input class="control-label" type="text" name="cidade" id="cidade" required="">
+        <label>Assunto* :</label>
+        <input class="control-label" type="text" name="assunto" id="assunto" required="">
+        <label>Mensagem* :</label>
+        <textarea class="input-block-level" rows="4" name="mensagem" id="mensagem" required=""></textarea>
+        <input type="submit" class="btn btn-primary" value="Enviar">
+    </fieldset>
+</form>

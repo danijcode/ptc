@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    $(function(){
+        $('#fCadastro').populate(<?php echo $view_json_objeto; ?>);
+    });      
+</script>
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Editar<small>Aluno</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?Aluno/atualizar" method="post">
+
+                <input type="hidden" id="id" name="id"/>
+                <input type="hidden" id="controleAluno" name="controleAluno"/>
+
+                <h2>Nome *</h2>
+                <div class="input-control text">
+                    <input type="text" name="nome" id="nome" maxlength="115" required=""/>
+                </div>
+                <h2>Data de Nascimento *</h2>
+                <div class="input-control text">
+                    <input type="text" name="dataNascimento" id="dataNascimento" maxlength="10" style="width: 200px;" required=""/>
+                </div>
+                <h2>Sexo</h2>
+                <label class="input-control radio">
+                    <input type="radio" name="sexo" id="sexo" value="F">
+                    <span class="helper">Feminino</span>
+                </label>
+                <label class="input-control radio">
+                    <input type="radio" name="sexo" id="sexo" value="M">
+                    <span class="helper">Masculino</span>
+                </label>
+                <h2>Número Telefone *</h2>
+                <div class="input-control text">
+                    <input type="text" name="telefone" id="telefone" maxlength="14" style="width: 200px;" required=""/>
+                </div>
+                <h2>Endereço *</h2>
+                <div class="input-control text">
+                    <input type="text" name="endereco" id="endereco" maxlength="115" required=""/>
+                </div>
+                <h2>Email *</h2>
+                <div class="input-control text">
+                    <input type="text" name="email" id="email" maxlength="115" required=""/>
+                </div>
+
+                <h2>Status</h2>
+                <label class="input-control radio">
+                    <input type="radio" name="status" value="A" />
+                    <span class="helper">Ativo</span>
+                </label>
+                
+                <label class="input-control radio">
+                    <input type="radio" name="status" value="D" />
+                    <span class="helper">Desativado</span>
+                </label>
+                <br/>
+                
+                <input type="submit" value="Salvar">
+            </form>
+        </div>
+    </div>
+</div>

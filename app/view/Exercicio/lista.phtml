@@ -1,0 +1,46 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Exercício<small>lista</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+
+    <div class="page-region">
+        <div class="page-region-content">
+            <!-- inicio table com lista de usuarios -->
+            <div>
+                  <?php echo $view_toolbar; ?>            
+            </div>
+            <?php if($view_listExercicio != null){ ?>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Grupo Muscular</th>                                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($view_listExercicio as $objExercicio) : ?>
+                    <tr>
+                        <td>
+                            <a href="index.php?Exercicio/informar/id/<?php echo $objExercicio->getId(); ?>">
+                                <?php echo ($objExercicio->getNome()); ?>
+                            </a>
+                        </td>
+
+                        <td>
+                            <?php echo ($objExercicio->getGrupoMuscular()->getNome()); ?>
+                        </td>
+                        
+                    </tr>
+                    <?php endforeach ?>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <?php }else{?>
+            <h3>Nenhum exercício encontrado.</h3>
+            <?php } ?>
+        </div>
+    </div>
+</div>

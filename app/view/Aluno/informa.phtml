@@ -1,0 +1,105 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Aluno<small>Informações</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <?php echo $view_toolbar; ?>
+            <div class="page-control" data-role="page-control">
+                <ul>
+                    <li class="active"><a href="#frameI">Identificação</a></li>
+                    <li><a href="#frameT">Treino</a></li>
+                    <li><a href="#frameA">Avaliação</a></li>
+                </ul>
+                <div class="frames">
+
+                    <div class="frame active" id="frameI">
+                        <h2>Nome Completo </h2>
+                        <?php echo $view_aluno->getNome(); ?>
+                        <h2>Data Nascimento </h2>
+                        <?php echo $view_aluno->getDataNascimento(); ?>
+                        <h2>Sexo</h2>
+                        <?php echo ($view_aluno->getSexo() == 'F') ? 'Feminino' : 'Masculino'; ?>
+                        <h2>Número Telefone </h2>
+                        <?php echo FormatHelper::formatTelefone($view_aluno->getTelefone()); ?>
+                        <h2>Endereço </h2>
+                        <?php echo $view_aluno->getEndereco(); ?>
+                        <h2>Email </h2>
+                        <?php echo $view_aluno->getEmail(); ?>                        
+                        <h2>Status </h2>
+                        <?php echo ($view_aluno->getStatus()) ? 'Ativo' : 'Desativado'; ?>                        
+                    </div>                  
+
+
+                    <div class="frame" id="frameT">
+
+                        <?php if ($view_aluno->getTreino() !== null): ?>
+                            <h3>Treinos associados ao aluno</h3>
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>Treino</th>
+                                        <th>Objetivo</th>
+                                        <th>Sessões</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($view_aluno->getTreino() as $objTreino) : ?>
+                                        <tr>
+                                            <td>
+                                               <a href="index.php?Treino/informar/id/<?php echo $objTreino->getId(); ?>">
+                                                      <?php echo $objTreino->getNome(); ?>
+                                               </a>  
+                                            </td>
+                                            <td><?php echo $objTreino->getObjetivo(); ?></td>
+<!--                                            <td><?php //echo ($objTreino->getObjetivo()->getNome()); ?></td>-->
+                                            <td><?php echo $objTreino->getSessoes(); ?></td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        <?php else: ?>
+                            <h3>Nenhuma treino registrado.</h3>
+                        <?php endif; ?>
+
+                    </div>                  
+                    <div class="frame" id="frameA">
+                        <?php if ($view_aluno->getAvaliacao() !== null): ?>
+                            <h3>Avaliações realizadas</h3>
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Peso</th>
+                                        <th>Altura</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($view_aluno->getAvaliacao() as $objAvaliacao) : ?>
+                                        <tr>
+                                            <td>
+                                                <a href="index.php?Avaliacao/informar/id/<?php echo $objAvaliacao->getId(); ?>">
+                                                      <?php echo $objAvaliacao->getData(); ?>
+                                                </a> 
+                                            </td>
+                                            <td><?php echo $objAvaliacao->getPeso(); ?></td>
+                                            <td><?php echo $objAvaliacao->getAltura(); ?></td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        <?php else: ?>
+                            <h3>Nenhuma Avaliação registrada.</h3>
+                        <?php endif; ?>
+                    </div>                  
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

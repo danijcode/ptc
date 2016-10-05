@@ -1,0 +1,48 @@
+<br></br>
+<?php if(isset($view_feedback)): ?>
+    <?php if($view_feedback): ?>
+        <br>
+        <div class="bs-docs-example">
+            <div class="alert alert-error">
+                <button class="close" data-dismiss="alert" type="button">×</button>
+                <strong>Erro!</strong> Seu cadastro não foi enviado corretamente.
+            </div>
+        </div>
+    <?php else: ?>
+        <br>
+        <div class="bs-docs-example">
+            <div class="alert alert-success">
+                <button class="close" data-dismiss="alert" type="button">×</button>
+                <strong>Parabéns!</strong> Seu cadastro foi enviado corretamente.
+            </div>
+        </div>
+     <?php endif; ?>
+<?php endif; ?>
+<form method="POST" action="index.php?Ptc/inserirProfessor">
+    <fieldset>
+        <legend>Cadastro de Professor:</legend>
+        <p> Preencha seus dados abaixo e comece a usar hoje mesmo. Caso já tenha feito seu cadastro, faça seu login.</p>
+        <p>Ao finalizar o cadastro, um email de confirmação será enviado para que possa ter acesso ao sistema.</p>
+       
+        <label>Nome Completo* :</label>
+        <input class="input-block-level" name="nome" id="nome" type="text" required="">
+        <label>Sexo:</label>
+        <label class="radio">
+            <input type="radio" name="sexo" id="optionsRadios1" value="F" checked>
+            Feminino
+        </label>
+        <label class="radio">
+            <input type="radio" name="sexo" id="optionsRadios2" value="M">
+            Masculino
+        </label>
+        <label>Telefone* :</label>
+        <input class="input-block-level" name="telefone" id="telefone" type="text"  required="">
+        <label>Endereço* :</label>
+        <input class="input-block-level" name="endereco" id="endereco" type="text"  required="">
+        <label>Email* :</label>
+        <input class="input-block-level" name="email" id="email" type="text" required="">
+        <label>Senha* :</label>
+        <input class="input-block-level" name="senha" id="senha" type="password"  required="">
+        <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+    </fieldset>
+</form>

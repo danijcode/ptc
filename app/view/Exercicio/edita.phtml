@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    $(function(){
+        $('#fCadastro').populate(<?php echo $view_json_objeto; ?>);
+    });      
+</script>
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Editar<small>Exercício</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?Exercicio/atualizar" method="post">
+
+                <input type="hidden" id="id" name="id"/>
+                <input type="hidden" id="controleExercicio" name="controleExercicio"/>
+
+                <h2>Nome *</h2>
+                <div class="input-control text">
+                    <input type="text" name="nome" id="nome" maxlength="115" required=""/>
+                </div>
+                <h2>Grupo Muscular *</h2>
+                <div class="input-control select">
+                    <select name="grupoMuscular" id="grupoMuscular" required="">
+                        <option value="" selected="selected">Selecione</option>
+                        <?php echo $view_listGrupoMuscular; ?>
+                    </select>
+                </div>
+                <br/>
+                <input type="submit" value="Salvar">
+            </form>
+        </div>
+    </div>
+</div>

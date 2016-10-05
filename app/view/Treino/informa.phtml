@@ -1,0 +1,33 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Treino<small>Informações</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <?php echo $view_toolbar; ?>
+            <div class="page-control" data-role="page-control">
+                <ul>
+                    <li class="active"><a href="#frameI">Informações</a></li>
+                </ul>
+                <div class="frames">
+
+                    <div class="frame active" id="frameI">
+                        <h2>Nome </h2>
+                        <?php echo $view_treino->getNome(); ?>                   
+                        <h2>Objetivo </h2>
+                        <?php echo $view_treino->getObjetivo(); ?>                   
+                        <h2>Data Inicial </h2>
+                        <?php echo $view_treino->getDataTreino(); ?>                   
+                        <h2>Sessões </h2>
+                        <?php echo $view_treino->getSessoes(); ?>                   
+                        <h2>Observações</h2>
+                        <?php echo $view_treino->getObservacao(); ?>                                     
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

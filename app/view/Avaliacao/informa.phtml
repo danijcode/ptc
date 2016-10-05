@@ -1,0 +1,37 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Avaliação<small>Informações</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <?php echo $view_toolbar; ?>
+            <div class="page-control" data-role="page-control">
+                <ul>
+                    <li class="active"><a href="#frameI">Informações</a></li>
+                </ul>
+                <div class="frames">
+
+                    <div class="frame active" id="frameI">
+                        <h2>Data </h2>
+                        <?php echo $view_avaliacao->getData(); ?>                   
+                        <h2>Peso </h2>
+                        <?php echo $view_avaliacao->getPeso(); ?>                   
+                        <h2>Altura </h2>
+                        <?php echo $view_avaliacao->getAltura(); ?>                   
+                        <h2>Peitoral </h2>
+                        <?php echo $view_avaliacao->getPeitoral(); ?>                   
+                        <h2>Cintura</h2>
+                        <?php echo $view_avaliacao->getCintura(); ?>                   
+                        <h2>Abdomêm</h2>
+                        <?php echo $view_avaliacao->getAbdomen(); ?>                   
+                        <h2>Quadril</h2>
+                        <?php echo $view_avaliacao->getQuadril(); ?>                   
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

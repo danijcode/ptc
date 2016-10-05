@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    $(function(){
+        $('#fCadastro').populate(<?php echo $view_json_objeto; ?>);
+    });      
+</script>
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Editar<small>Avaliação</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fCadastro" id="fCadastro" action="index.php?Avaliacao/atualizar" method="post">
+
+                <input type="hidden" id="id" name="id"/>
+                <input type="hidden" id="aluno" name="aluno" value=''/>
+                
+                <h2>Data *</h2>
+                <div class="input-control text">
+                      <input type="text" name="data" id="data" style="width: 200px;" required=""/>
+                </div>
+                <h2>Peso *</h2>
+                <div class="input-control text">
+                      <input type="text" name="peso" id="peso" style="width: 200px;" required=""/>
+                </div>
+                <h2>Altura *</h2>
+                <div class="input-control text">
+                      <input type="text" name="altura" id="altura" style="width: 200px;" required=""/>
+                </div>
+                <h2>Peitoral *</h2>
+                <div class="input-control text">
+                      <input type="text" name="peitoral" id="peitoral" style="width: 200px;" required=""/>
+                </div>
+                <h2>Cintura *</h2>
+                <div class="input-control text">
+                      <input type="text" name="cintura" id="cintura" style="width: 200px;" required=""/>
+                </div>
+                <h2>Abdomên *</h2>
+                <div class="input-control text">
+                      <input type="text" name="abdomen" id="abdomen" style="width: 200px;" required=""/>
+                </div>
+                <h2>Quadril *</h2>
+                <div class="input-control text">
+                      <input type="text" name="quadril" id="quadril" style="width: 200px;" required=""/>
+                </div>
+                
+                <br/>
+                <input type="submit" name="cadastrar" value="Salvar">
+            </form>
+        </div>
+    </div>
+</div>

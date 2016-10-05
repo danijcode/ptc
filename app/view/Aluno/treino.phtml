@@ -1,0 +1,124 @@
+<div class="page secondary">
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Treino<small>Aluno</small></h1>
+            <a href="javascript:history.go(-1)" class="back-button big page-back"></a>
+        </div>
+    </div>
+    <div class="page-region">
+        <div class="page-region-content">
+            <form name="fTreino" id="fTreino" action="index.php?Aluno/inserirTreino" method="post">
+
+                <input type='hidden' name='idAluno' id='idAluno' value='<?php echo $view_idAluno; ?>' />
+
+                <h2>Nome *</h2>
+                <div class="input-control text">
+                    <input type="text" name="nome" id="nome" style="width: 200px;" required=""/>
+                </div>
+                <h2>Objetivo *</h2>
+                <div class="input-control select">
+                    <select name="objetivo" id="objetivo" required="">
+                        <option value="" selected="selected">Selecione</option>
+                        <?php echo $view_listObjetivo; ?>
+                    </select>
+                </div>
+                <h2>Data Incial *</h2>
+                <div class="input-control text">
+                    <input type="text" name="dataTreino" id="dataTreino" style="width: 200px;" />
+                </div>
+                <h2>Sessões *</h2>
+                <div class="input-control text">
+                    <input type="text" name="sessoes" id="sessoes" style="width: 200px;" required=""/>
+                </div>
+
+                <h2>Atividades *</h2>
+                <table class="striped bordered">
+
+                    <thead>
+                        <tr>
+                            <th colspan="5">
+                                <a href="javascript:void(0);" id="btnAddAtributo">[+] Adicionar Atividade</a>      
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="atributoContent">    
+
+                        <tr id="atributo" style="display: none">
+
+                            <td>
+                                <div class="input-control select">
+                                    <select name="atividade[exercicio][]" id="exercicio">
+                                        <option value="" selected="selected">Selecione</option>
+                                        <?php echo $view_listExercicio; ?>
+                                    </select>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="input-control text">
+                                    <input type="text" name="atividade[series][]" id="series" style="width: 50px;"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-control text">
+                                    <input type="text" name="atividade[repeticoes][]" id="repeticoes" style="width: 50px;" />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-control text">
+                                    <input type="text" name="atividade[carga][]" id="carga" style="width: 50px;"/>
+                                </div>
+                            </td>
+                            <td><a href="javascript:void(0);" onclick="$(this).closest('#atributo').remove();">[-] Remover Atividade</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>Exercicio</td>
+                            <td>Series</td>
+                            <td>Repetições</td>
+                            <td>Carga</td>
+                            <td>Remover</td>
+                        </tr>
+
+                        <tr id="atributo">
+                            <td>
+                                <div class="input-control select">
+                                    <select name="atividade[exercicio][]" id="exercicio">
+                                        <option value="" selected="selected">Selecione</option>
+                                        <?php echo $view_listExercicio; ?>
+                                    </select>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="input-control text">
+                                    <input type="text" name="atividade[series][]" id="series" style="width: 50px;"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-control text">
+                                    <input type="text" name="atividade[repeticoes][]" id="repeticoes" style="width: 50px;" />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-control text">
+                                    <input type="text" name="atividade[carga][]" id="carga" style="width: 50px;"/>
+                                </div>
+                            </td>
+                            <td><a href="javascript:void(0);" onclick="$(this).closest('#atributo').remove();">[-] Remover Atividade</a></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                <h2>Observações </h2>
+                <div class="input-control textarea">
+                    <textarea name="observacao" id="observacao" style="width: 820px; height: 100px;" required=""> </textarea>
+                </div>                    
+                <br/>
+                <input type="submit" name="cadastrar" value="Salvar">
+            </form>
+        </div>
+    </div>
+</div>
